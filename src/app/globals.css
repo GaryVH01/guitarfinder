@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+/* BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #272121;
+}
+
+html {
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: x-large;
+    color: white;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: medium;
+    color: white;
+}
