@@ -37,6 +37,11 @@ const Nav = () => {
             Contact
           </li>
         </Link>
+        <Link href="/guitar-template">
+          <li className="text-white hover:bg-white  py-4 hover:text-black">
+            guitare
+          </li>
+        </Link>
       </ul>
       <div
         onClick={() => showMenu(!Toggle)}

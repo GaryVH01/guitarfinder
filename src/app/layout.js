@@ -2,6 +2,7 @@ import { Kodchasan } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Nav from "@/components/nav/Nav";
+import Footer from "@/components/footer/Footer";
 
 const kodchasan = Kodchasan({
   weight: ["200", "300", "400", "500", "600", "700"],
@@ -16,11 +17,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={kodchasan.className}>
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={kodchasan.className} suppressHydrationWarning={true}>
         <Header />
         <Nav />
         {children}
+        <Footer />
       </body>
     </html>
   );

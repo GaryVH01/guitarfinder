@@ -6,7 +6,7 @@ export default function Home() {
     <main>
       {" "}
       <div className="">
-        <h1 className="text-center">The utlimate app guitar</h1>
+        <h1>The utlimate app guitar</h1>
         <h2 className="text-center">Made by guitar lovers</h2>
         <img className="mx-auto my-6 w-80" src="guit.jpeg" alt="" />
         <div className="flex justify-center">
