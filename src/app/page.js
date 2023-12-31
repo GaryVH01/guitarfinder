@@ -11,7 +11,7 @@ export default function Home() {
         <img className="mx-auto my-6 w-80" src="guit.jpeg" alt="" />
         <div className="flex justify-center">
           <Link href="/collections">
-            <button className="bg-white px-3 py-2 rounded-sm mb-5">
+            <button className="bg-white text-black px-3 py-2 rounded-sm mb-5">
               Visit the collections
             </button>
           </Link>

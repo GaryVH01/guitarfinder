@@ -336,3 +336,54 @@ export const brandsFilters = [
     cat: "Z",
   },
 ];
+
+export const pics = [
+  {
+    id: 345,
+    src: "guit.jpeg",
+  },
+  {
+    id: 347,
+    src: "guit2.jpeg",
+  },
+  {
+    id: 346,
+    src: "guit3.webp",
+  },
+  {
+    id: 348,
+    src: "guit.jpeg",
+  },
+  {
+    id: 349,
+    src: "guit2.jpeg",
+  },
+  {
+    id: 350,
+    src: "guit2.jpeg",
+  },
+  {
+    id: 351,
+    src: "guit3.webp",
+  },
+  {
+    id: 352,
+    src: "guit.jpeg",
+  },
+  {
+    id: 352,
+    src: "guit2.jpeg",
+  },
+  {
+    id: 353,
+    src: "guit2.jpeg",
+  },
+  {
+    id: 354,
+    src: "guit3.webp",
+  },
+  {
+    id: 355,
+    src: "guit.jpeg",
+  },
+];

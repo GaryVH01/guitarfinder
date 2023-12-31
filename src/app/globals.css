@@ -10,7 +10,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
 }
 
 
@@ -33,4 +32,22 @@ h1 {
 h2 {
     font-size: medium;
     color: white;
+}
+
+p {
+    color: white;
+
+}
+
+span {
+    color: white;
+
+}
+
+.pictureDiv {
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 20px;
+    z-index: 10;
+    display: flex;
 }
