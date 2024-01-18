@@ -27,7 +27,10 @@ const Slider = () => {
   const changeImage = (index) => {
     const slider = pics[index];
     setSliderData(slider);
+    setPicActive(index);
   };
+
+  const [picActive, setPicActive] = useState(0);
 
   return (
     <div className="flex flex-col">
@@ -64,9 +67,19 @@ const Slider = () => {
           className="flex overflow-x-hidden scroll-smooth gap-3 mx-2 "
         >
           {pics.map((data, index) => (
-            <div className="pictureDiv h-2 md:h-28">
+            <div
+              className={
+                picActive === index
+                  ? "pictureDiv h-2 md:h-28"
+                  : "pictureDiv h-2 md:h-28"
+              }
+            >
               <img
-                className="w-72 object-cover rounded-md cursor-pointer "
+                className={
+                  picActive === index
+                    ? "w-72 object-cover rounded-md cursor-pointer opacity-60"
+                    : "w-72 object-cover rounded-md cursor-pointer"
+                }
                 key={data.id}
                 src={data.src}
                 alt=""

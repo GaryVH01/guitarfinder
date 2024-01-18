@@ -41,13 +41,26 @@ p {
 
 span {
     color: white;
+}
 
+label {
+    color: white;
+}
+
+input,
+textarea {
+    padding: 0 5px;
 }
 
 .pictureDiv {
     min-width: 80px;
     min-height: 80px;
-    border-radius: 20px;
     z-index: 10;
     display: flex;
+}
+
+.active {
+    background-color: white;
+    color: black;
+    border-radius: 20px 20px 0 0;
 }

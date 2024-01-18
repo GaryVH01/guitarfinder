@@ -40,7 +40,7 @@ const page = () => {
   };
 
   return (
-    <div className="lg:px-36 xl:px-72">
+    <div className="lg:px-36 xl:px-72 min-h-screen">
       <h1>COLLECTIONS</h1>
       <div className="flex flex-wrap px-2 py-5 justify-center text-white text-xs md:mx-16 md:text-sm ">
         {/* Ici on map le tableau des filtres alphabétique qui sont dans le fichier db.jsx */}
@@ -63,7 +63,7 @@ const page = () => {
           );
         })}
       </div>
-      <div className="flex flex-wrap justify-center gap-5 rounded-lg">
+      <div className="flex flex-wrap justify-center gap-5 rounded-lg ">
         {/* Ici on map le tableau des marques en appelant le composant CardsBrands. */}
         {brands.map((content) => (
           <CardsBrands key={content.id} id={content.id} src={content.logo} />

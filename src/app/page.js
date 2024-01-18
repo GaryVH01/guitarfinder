@@ -12,7 +12,7 @@ export default function Home() {
         <div className="flex justify-center">
           <Link href="/collections">
             <button className="bg-white text-black px-3 py-2 rounded-sm mb-5">
-              Visit the collections
+              Visit collections
             </button>
           </Link>
         </div>

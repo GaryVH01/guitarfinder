@@ -3,8 +3,10 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { usePathname } from "next/navigation";
 
 const Nav = () => {
+  const currentRoute = usePathname();
   const [Toggle, showMenu] = useState(false);
 
   return (
@@ -37,9 +39,19 @@ const Nav = () => {
             Contact
           </li>
         </Link>
-        <Link href="/guitar-template">
+        <Link href="/add-guitar">
           <li className="text-white lg:hover:bg-white lg:hover:rounded-r-2xl   py-4 lg:hover:text-black px-5">
-            Guitare
+            Add Guitar
+          </li>
+        </Link>
+        <Link href="/getguitars">
+          <li className="text-white lg:hover:bg-white lg:hover:rounded-r-2xl   py-4 lg:hover:text-black px-5">
+            get guitars{" "}
+          </li>
+        </Link>
+        <Link href="/add-guitar2">
+          <li className="text-white lg:hover:bg-white lg:hover:rounded-r-2xl   py-4 lg:hover:text-black px-5">
+            essai{" "}
           </li>
         </Link>
       </ul>
