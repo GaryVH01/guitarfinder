@@ -48,8 +48,19 @@ label {
 }
 
 input,
-textarea {
-    padding: 0 5px;
+textarea,
+select,
+input value {
+    padding: 10px 5px;
+    background: none;
+    border: 1px solid grey;
+    color: white;
+    border-radius: 5px;
+}
+
+
+::placeholder {
+    padding-left: 5px;
 }
 
 .pictureDiv {

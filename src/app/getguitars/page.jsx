@@ -1,8 +1,24 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Slider from "@/components/Carrousel/Slider";
 import Title from "@/components/globals/title";
+import axios from "axios";
 
 const page = () => {
+  // Requête GET pour récupérer les guitares à afficher
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/guitars", {
+        responseType: "json",
+      })
+      .then((res) => {
+        const data = res.data;
+        console.log(data);
+      })
+      .catch((error) => console.log(error.message));
+  }, []);
+
   return (
     <div>
       <Title title="A definir" />
