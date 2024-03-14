@@ -4,20 +4,30 @@ import React, { useEffect, useState } from "react";
 import Slider from "@/components/Carrousel/Slider";
 import Title from "@/components/globals/title";
 import axios from "axios";
+import { useParams } from "next/navigation";
 
 const page = () => {
   // Requête GET pour récupérer les guitares à afficher
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/guitars", {
-        responseType: "json",
-      })
-      .then((res) => {
-        const data = res.data;
-        console.log(data);
-      })
-      .catch((error) => console.log(error.message));
-  }, []);
+  const [data, setData] = useState([]);
+
+  const { id } = useParams();
+  console.log("id guitar:", id);
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/api/guitars", {
+  //       responseType: "json",
+  //     })
+  //     .then((res) => {
+  //       const data = res.data;
+  //       console.log(data);
+  //       setData(data);
+  //     })
+  //     .catch((error) => console.log(error.message));
+  // }, []);
+
+  // const guitar = data.find((guit) => guit.id === id);
+  // console.log("apartement filtré", guitar);
 
   return (
     <div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { CiCirclePlus } from "react-icons/ci";
 import { FaTrashAlt } from "react-icons/fa";
@@ -32,10 +32,11 @@ const Form = () => {
     setFiles([...files, ...fileList]);
     const imageArray = fileList.map((file) => {
       return {
-        id: Date.now(),
+        // id: Date.now(),
         file: URL.createObjectURL(file),
       };
     });
+
     setImageUrl([...files, ...imageArray]);
     console.log("Tableau d'url:", imageUrl);
     setPreview((prevImages) => [...prevImages, ...imageArray]);
@@ -64,7 +65,7 @@ const Form = () => {
 
     //______PARTIE INPUT FILES_______
     for (let i = 0; i < imageUrl.length; i++) {
-      formData.append("imageUrl", imageUrl[i].file);
+      formData.append("IMAGE_URL", imageUrl[i].file);
       // formData.append("image", files);
     }
     for (let i = 0; i < files.length; i++) {
@@ -72,26 +73,28 @@ const Form = () => {
     }
     // formData.append("image", files);
     //_______PARTIE INPUT TEXT_______
-    formData.append("brand", brand);
-    formData.append("model", model);
-    formData.append("type", type);
-    formData.append("year", year);
-    formData.append("body_type", bodyType);
-    formData.append("body_wood", bodyWood);
-    formData.append("neck_wood", neckWood);
-    formData.append("fretboard_wood", fretboardWood);
-    formData.append("pickups", pickups);
-    formData.append("quantity", quantity);
-    formData.append("description", description);
+    formData.append("BRAND", brand);
+    formData.append("MODEL", model);
+    formData.append("GUITAR_TYPE", type);
+    formData.append("YEAR_PRODUCTION", year);
+    formData.append("BODY_TYPE", bodyType);
+    formData.append("BODY_WOOD", bodyWood);
+    formData.append("NECK_WOOD", neckWood);
+    formData.append("FRETBOARD_WOOD", fretboardWood);
+    formData.append("PICKUPS", pickups);
+    formData.append("QUANTITY", quantity);
+    formData.append("DESCRIPTION", description);
 
-    const result = await axios.post(
-      "http://localhost:5000/api/guitars",
-      formData,
-      { headers: { "Content-Type": "multipart/form-data" } }
-    );
-    console.log(result.data);
-    if (result.code === 201) {
+    const result = await axios.post("http://localhost:5000/guitars", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    console.log("result data", result.data);
+    console.log("result status", result.status);
+    if (result.status === 201) {
       setStatus({ success: true, message: "Guitar added" });
+      setPreview([]);
+      setFiles([]);
+      setImageUrl([]);
     } else {
       setStatus({ succes: false, message: "An error has occured" });
     }
@@ -104,7 +107,7 @@ const Form = () => {
         name="contact"
         method="POST"
         className="flex flex-col w-full overflow-hidden lg:w-3/6 mx-auto min-h-screen justify-center gap-3"
-        enctype="multipart/form-data"
+        encType="multipart/form-data"
       >
         {/* DESCRIPTION */}
         <div className="flex flex-col lg:flex-row  w-5/6 mx-auto justify-between gap-3 lg:gap-10 ">
@@ -204,7 +207,7 @@ const Form = () => {
               className=""
               name="year"
               type="text"
-              minlength="4"
+              minLength="4"
               maxLength="8"
               placeholder="1967"
               // required

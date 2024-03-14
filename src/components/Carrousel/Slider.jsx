@@ -68,6 +68,7 @@ const Slider = () => {
         >
           {pics.map((data, index) => (
             <div
+              key={index}
               className={
                 picActive === index
                   ? "pictureDiv h-2 md:h-28"
@@ -80,7 +81,6 @@ const Slider = () => {
                     ? "w-72 object-cover rounded-md cursor-pointer opacity-60"
                     : "w-72 object-cover rounded-md cursor-pointer"
                 }
-                key={data.id}
                 src={data.src}
                 alt=""
                 onClick={() => {

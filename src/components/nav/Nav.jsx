@@ -44,14 +44,9 @@ const Nav = () => {
             Add Guitar
           </li>
         </Link>
-        <Link href="/getguitars">
+        <Link href="/guitars">
           <li className="text-white lg:hover:bg-white lg:hover:rounded-r-2xl   py-4 lg:hover:text-black px-5">
-            get guitars{" "}
-          </li>
-        </Link>
-        <Link href="/uploadtest">
-          <li className="text-white lg:hover:bg-white lg:hover:rounded-r-2xl   py-4 lg:hover:text-black px-5">
-            UploadTest{" "}
+            Get all guitars{" "}
           </li>
         </Link>
       </ul>
