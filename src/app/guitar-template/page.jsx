@@ -1,4 +1,3 @@
-import Carrousel from "@/components/Carrousel/Carrousel";
 import Slider from "@/components/Carrousel/Slider";
 import React from "react";
 
@@ -9,17 +8,7 @@ const page = () => {
       <article className="flex flex-col mx-12 lg:flex-row lg:mx-36">
         {/* card guitare */}
         <div className="flex flex-col">
-          {/* <div className="flex justify-center ">
-            <div className="rounded-lg bg-white shadow-lg shadow-zinc-400">
-              <img
-                className="object-cover w-full h-full p-2 rounded-lg"
-                src="guit.jpeg"
-                alt=""
-              />
-            </div>
-          </div> */}
           {/* Carrousel */}
-          {/* <Carrousel /> */}
           <Slider />
         </div>
         {/* description */}

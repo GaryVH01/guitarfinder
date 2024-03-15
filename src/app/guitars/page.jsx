@@ -21,16 +21,23 @@ const page = () => {
   return (
     <div className="">
       <h1>GET ALL</h1>
-      <div className="flex flex-wrap justify-center gap-10 w-5/6 lg:w-4/6 mx-auto">
-        {data.guitars?.map((guitar) => (
-          <CardGuitars
-            key={guitar.id}
-            id={guitar.id}
-            title={guitar.BRAND + " " + guitar.MODEL}
-            src={URL.revokeObjectURL(guitar.IMAGEURL)}
-          />
-        ))}
-      </div>
+      {data ? (
+        <div className="flex flex-wrap justify-center gap-10 w-5/6 lg:w-4/6 mx-auto">
+          {data.guitars?.map((guitar) => (
+            <CardGuitars
+              key={guitar.id}
+              id={guitar.id}
+              title={guitar.BRAND + " " + guitar.MODEL}
+              src={URL.revokeObjectURL(guitar.IMAGEURL)}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="text-center mx-auto text-white text-xl">
+          {" "}
+          Il n'y a aucune guitare dans la bibliothèque
+        </div>
+      )}
     </div>
   );
 };

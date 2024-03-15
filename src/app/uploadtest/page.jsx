@@ -14,7 +14,6 @@ export default function App() {
     setFiles([...files, ...fileList]);
     const imageArray = fileList.map((file) => {
       return {
-        // id: Date.now(),
         file: URL.createObjectURL(file),
       };
     });

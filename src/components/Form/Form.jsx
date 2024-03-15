@@ -371,39 +371,6 @@ const Form = () => {
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
-        {/* UPLOAD */}
-        {/* <div>
-          <label className="py-2 px-4 bg-gray-200 text-gray-700 rounded-lg flex items-center justify-center cursor-pointer">
-            <input
-              type="file"
-              className="hidden"
-              multiple
-              onChange={handleImageUpload}
-            />
-            <CiCirclePlus className="h-6 w-6 mr-2" />
-            Add Files
-          </label>
-
-          <ul className="grid grid-cols-2 gap-4">
-            {files.map((file, index) => (
-              <li
-                key={index}
-                className="bg-gray-100 p-4 rounded-lg flex items-center justify-between"
-              >
-                <div className="flex items-center gap-2">
-                  <span className="font-medium">{file.name}</span>
-                  <span className="text-gray-500">({file.type})</span>
-                </div>
-                <button
-                  className="text-red-500 hover:text-red-700"
-                  onClick={() => handleImageDelete(index)}
-                >
-                  <FaTrashAlt className="h-6 w-6" />
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div> */}
 
         <div className="flex flex-col h-auto w-5/6 mx-auto p-5 border-gray-500 border-solid border-2 rounded-xl items-center justify-center mb-5">
           <label

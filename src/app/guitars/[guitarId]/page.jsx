@@ -6,6 +6,7 @@ import Title from "@/components/globals/title";
 import axios, { Axios } from "axios";
 import { useParams } from "next/navigation";
 import { FaTrashAlt } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const page = () => {
   const [data, setData] = useState([]);
@@ -13,6 +14,8 @@ const page = () => {
   const params = useParams();
   const id = params.guitarId;
   const api = "http://localhost:5000/guitars/";
+
+  const router = useRouter();
 
   console.log("params:", params);
   useEffect(() => {
@@ -31,6 +34,10 @@ const page = () => {
       .catch((error) => console.log(error.message));
   }, []);
 
+  const redirect = () => {
+    router.push("/guitars");
+  };
+
   const handleDeleteGuitar = (e) => {
     if (
       confirm(
@@ -45,9 +52,11 @@ const page = () => {
         .delete(api + id)
         .then((res) => {
           console.log("deleted", res);
+          alert("la guitare a bien été supprimée");
         })
         .catch((err) => console.log(err));
     }
+    redirect();
   };
 
   return (
@@ -112,12 +121,22 @@ const page = () => {
           </div>
         </div>
       </article>
-      <button
-        onClick={(e) => handleDeleteGuitar(id, e)}
-        className="flex mx-auto text-center text-white mt-5 "
-      >
-        <FaTrashAlt className="h-6 w-6" />
-      </button>
+      <div className="flex justify-center gap-10">
+        <button
+          onClick={(e) => handleDeleteGuitar(id, e)}
+          className="flex text-center text-white mt-5 px-5 py-3 bg-red-400 rounded-md hover:bg-red-200 hover:text-black "
+        >
+          Supprimer
+          {/* <FaTrashAlt className="h-6 w-6" /> */}
+        </button>
+        <button
+          onClick={(e) => handleDeleteGuitar(id, e)}
+          className="flex text-center text-white mt-5 px-5 py-3 bg-red-400 rounded-md  hover:bg-red-200 hover:text-black"
+        >
+          Modifier
+          {/* <FaTrashAlt className="h-6 w-6" /> */}
+        </button>
+      </div>
     </div>
   );
 };
